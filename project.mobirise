@@ -28,11 +28,15 @@
         "isScrollToTopButton": false
       },
       "additionalSetColors": [
-        "#f9f9f9"
+        "#f9f9f9",
+        "#da3131",
+        "#bd4747",
+        "#29072e",
+        "#5d96aa"
       ]
     },
     "versionFirst": "4.6.3",
-    "uniqCompNum": 36,
+    "uniqCompNum": 40,
     "versionPublish": "4.6.3"
   },
   "pages": {
@@ -149,11 +153,51 @@
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
+            "h3": {
+              "text-align": "center"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#767676",
+              "font-weight": "300"
+            },
+            ".mbr-content-text": {
+              "color": "#767676"
+            },
+            ".panel-item": {
+              "background": "#ffffff"
+            },
+            ".card": {
+              "word-wrap": "break-word"
+            },
+            ".mbr-iconfont": {
+              "font-size": "80px",
+              "color": "#149dcc"
+            }
+          },
+          "_name": "counters1",
+          "_customHTML": "<section class=\"counters1 counters\" group=\"Counters\" plugins=\"ViewportChecker\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"8\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n\n        <input type=\"checkbox\" title=\"Show Block Title\" name=\"showTitles\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Icons\" name=\"showIcons\" checked>\n\n        <select title=\"Cards Count\" name=\"cardsAmount\">\n           <option value=\"1\">1</option>\n           <option value=\"2\">2</option>\n           <option value=\"3\">3</option>\n           <option value=\"4\" selected>4</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/img/02.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#b2ccd2\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.9\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <h2 class=\"mbr-section-title pb-3 align-center mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">O8D MARKET 3</h2>\n        <h3 class=\"mbr-section-subtitle mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n            遊逛指南\n        </h3>\n\n        <div class=\"container pt-4 mt-2\">\n            <div class=\"media-container-row\">\n                <div class=\"card p-3 align-center col-12 col-md-6\" mbr-class=\"{'col-lg-3': cardsAmount == '4','col-lg-4': cardsAmount == '3'}\">\n                    <div class=\"panel-item p-3\">\n                        <div class=\"card-img pb-3\" mbr-if=\"showIcons\">\n                            <a href=\"index.html#content5-w\"><span mbr-icon class=\"mbr-iconfont mbri-android\"></span></a>\n                        </div>\n\n                        <div class=\"card-text\">\n                            <h3 class=\"count pt-3 pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\">01</h3>\n                            <h4 class=\"mbr-content-title mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitles\">裝置<span style=\"font-weight: normal;\"><br></span></h4>\n                            <p class=\"mbr-content-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-content-text\">1.藝術家是誰<br>2.藝術家是誰<br>3.藝術家是誰<br>4.藝術家是誰<br>5.藝術家是誰</p>\n                        </div>\n                    </div>\n                </div>\n\n\n                <div class=\"card p-3 align-center col-12 col-md-6\" mbr-if=\"cardsAmount>1\" mbr-class=\"{'col-lg-3': cardsAmount == '4','col-lg-4': cardsAmount == '3'}\">\n                    <div class=\"panel-item p-3\">\n                        <div class=\"card-img pb-3\" mbr-if=\"showIcons\">\n                            <a href=\"index.html#content5-v\"><span mbr-icon class=\"mbr-iconfont mbri-music\"></span></a>\n                        </div>\n                        <div class=\"card-text\">\n                            <h3 class=\"count pt-3 pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\">02</h3>\n                            <h4 class=\"mbr-content-title mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitles\">表演<br></h4>\n                            <p class=\"mbr-content-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-content-text\">一人編制<br>詩與歌<br>詮釋葉石濤文<br>1. <br>2.<br>3.<br>4.</p>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"card p-3 align-center col-12 col-md-6\" mbr-if=\"cardsAmount>2\" mbr-class=\"{'col-lg-3': cardsAmount == '4','col-lg-4': cardsAmount == '3'}\">\n                    <div class=\"panel-item p-3\">\n                        <div class=\"card-img pb-3\" mbr-if=\"showIcons\">\n                            <a href=\"index.html#content5-u\"><span mbr-icon class=\"mbr-iconfont mbri-shopping-basket\"></span></a>\n                        </div>\n                        <div class=\"card-text\">\n                            <h3 class=\"count pt-3 pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\">03</h3>\n                            <h4 class=\"mbr-content-title mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitles\">攤位<br></h4>\n                            <p class=\"mbr-content-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-content-text\">攤位介紹<br>1. <br>2.<br>3.<br>4.<br>.<br>.<br>.<br>.<br><br></p>\n                        </div>\n                    </div>\n                </div>\n\n\n                <div class=\"card p-3 align-center col-12 col-md-6\" mbr-if=\"cardsAmount>3\" mbr-class=\"{'col-lg-3': cardsAmount == '4','col-lg-4': cardsAmount == '3'}\">\n                    <div class=\"panel-item p-3\">\n                        <div class=\"card-img pb-3\" mbr-if=\"showIcons\">\n                            <a href=\"index.html#content5-t\"><span mbr-icon class=\"mbr-iconfont mbri-bold\"></span></a>\n                        </div>\n\n                        <div class=\"card-texts\">\n                             <h3 class=\"count pt-3 pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\">04</h3>\n                            <h4 class=\"mbr-content-title mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitles\">床位<br></h4>\n                            <p class=\"mbr-content-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-content-text\">\n                                    鍋居與牛舍<br>介紹床型與房間\n                            </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n   </div>\n</section>",
+          "_cid": "qIAtrj3c55",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "counters1-r"
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
             ".title": {
               "margin-bottom": "2rem"
             },
             ".mbr-section-subtitle": {
-              "color": "#ffffff",
+              "color": "#232323",
               "text-align": "left"
             },
             "a:not([href]):not([tabindex])": {
@@ -180,10 +224,13 @@
             },
             "LABEL": {
               "color": "#ffffff"
+            },
+            ".mbr-section-subtitle B": {
+              "color": "#ffffff"
             }
           },
           "_name": "form1",
-          "_customHTML": "<section class=\"mbr-section form1\" group=\"Forms\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#232323\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\"title col-12 col-lg-8\">\n                <h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center pb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\"><a href=\"https://www.holkee.com/00a617bb60d4fb88ac8b\">攤位報名簡表</a><br><a href=\"https://www.holkee.com/00a617bb60d4fb88ac8b\"><br></a></h2>\n                <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-section-subtitle\">報名須知：<div>1. 費用 250元/天（當日繳交）</div><div>2. 需要場勘者可以使用IG私訊預約</div><div>3. 一小時前( pm12：00 )可準備開攤作業</div><div>4. 提供水電與照明，需自備桌椅</div><div>5. 停車與卸貨：由於巷內車道較小，可於最近的路口周邊或使用永福國小內的停車場</div><div>6. 保管：貴重的物品請務必自行保管，其餘可暫放。</div><br><div>日期 : 2018年4月14~15日</div><div>時間 : 下午:1:00~6:00</div><div>地址 : 台南市中西永福路2段81巷20號</div><div>IG : open8door（聯繫通道）</div></h3>\n            </div>\n        </div>\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div mbr-form class=\"media-container-column col-lg-8\">\n                    <div data-form-alert hidden>成功填寫</div>\n            \n                    <form class=\"mbr-form\" action=\"8opendoor8@gmail.com\" method=\"post\" name=\"Mobirise Form\">\n                        <div class=\"row row-sm-offset\">\n                            <div class=\"col-md-4 multi-horizontal\" data-for=\"name\">\n                                <div class=\"form-group\">\n                                    <label mbr-text class=\"form-control-label mbr-fonts-style\" mbr-theme-style=\"display-7\" for=\"name\">攤位名稱</label>\n                                    <input type=\"text\" class=\"form-control\" name=\"name\" data-form-field=\"Name\" required>\n                                </div>\n                            </div>\n                            <div class=\"col-md-4 multi-horizontal\" data-for=\"email\">\n                                <div class=\"form-group\">\n                                    <label mbr-text class=\"form-control-label mbr-fonts-style\" mbr-theme-style=\"display-7\" for=\"email\">電子郵件</label>\n                                    <input type=\"email\" class=\"form-control\" name=\"email\" data-form-field=\"Email\" required>\n                                </div>\n                            </div>\n                            <div class=\"col-md-4 multi-horizontal\" data-for=\"phone\">\n                                <div class=\"form-group\">\n                                    <label mbr-text class=\"form-control-label mbr-fonts-style\" mbr-theme-style=\"display-7\" for=\"phone\">聯繫人 ＋ 聯繫電話</label>\n                                    <input type=\"tel\" class=\"form-control\" name=\"phone\" data-form-field=\"Phone\">\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"form-group\" data-for=\"message\">\n                            <label mbr-text class=\"form-control-label mbr-fonts-style\" mbr-theme-style=\"display-7\" for=\"message\">粉絲專頁 &nbsp;/ &nbsp;攤位介紹 &nbsp;/ 金額 / 日期 / 宣傳圖片授權</label>\n                            <textarea type=\"text\" class=\"form-control\" name=\"message\" rows=\"7\" data-form-field=\"Message\"></textarea>\n                        </div>\n            \n                        <span mbr-buttons mbr-theme-style=\"display-4\" data-toolbar=\"-mbrLink,-mbrBtnAdd,-mbrBtnMove\" class=\"input-group-btn\">\n                            <a href type=\"submit\" class=\"btn btn-primary btn-form\">SEND FORM</a>\n                        </span>\n                    </form>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"mbr-section form1\" group=\"Forms\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#bd4747\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\"title col-12 col-lg-8\">\n                <h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center pb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\"><a href=\"https://www.holkee.com/00a617bb60d4fb88ac8b\" class=\"text-white\">攤位報名簡表</a><br><a href=\"https://www.holkee.com/00a617bb60d4fb88ac8b\"><br></a></h2>\n                <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-subtitle\"><b>報名須知：</b><br><b><br></b><div>1. 費用 250元/天（當日繳交）</div><div>2. 需要場勘者可以使用IG私訊預約</div><div>3. 一小時前( pm12：00 )可準備開攤作業</div><div>4. 提供水電與照明，需自備桌椅</div><div>5. 停車與卸貨：由於巷內車道較小，可於最近的路口周邊或使用永福國小內的停車場</div><div>6. 保管：貴重的物品請務必自行保管，其餘可暫放。</div><br><div>日期 : 2018年4月14~15日</div><div>時間 : 下午:1:00~6:00</div><div>地址 : 台南市中西永福路2段81巷20號</div><div>IG : open8door（聯繫通道）</div></h3>\n            </div>\n        </div>\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div mbr-form class=\"media-container-column col-lg-8\">\n                    <div data-form-alert hidden>成功填寫</div>\n            \n                    <form class=\"mbr-form\" action=\"8opendoor8@gmail.com\" method=\"post\" name=\"Mobirise Form\">\n                        <div class=\"row row-sm-offset\">\n                            <div class=\"col-md-4 multi-horizontal\" data-for=\"name\">\n                                <div class=\"form-group\">\n                                    <label mbr-text class=\"form-control-label mbr-fonts-style\" mbr-theme-style=\"display-7\" for=\"name\">攤位名稱</label>\n                                    <input type=\"text\" class=\"form-control\" name=\"name\" data-form-field=\"Name\" required>\n                                </div>\n                            </div>\n                            <div class=\"col-md-4 multi-horizontal\" data-for=\"email\">\n                                <div class=\"form-group\">\n                                    <label mbr-text class=\"form-control-label mbr-fonts-style\" mbr-theme-style=\"display-7\" for=\"email\">電子郵件</label>\n                                    <input type=\"email\" class=\"form-control\" name=\"email\" data-form-field=\"Email\" required>\n                                </div>\n                            </div>\n                            <div class=\"col-md-4 multi-horizontal\" data-for=\"phone\">\n                                <div class=\"form-group\">\n                                    <label mbr-text class=\"form-control-label mbr-fonts-style\" mbr-theme-style=\"display-7\" for=\"phone\">聯繫人 ＋ 聯繫電話</label>\n                                    <input type=\"tel\" class=\"form-control\" name=\"phone\" data-form-field=\"Phone\">\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"form-group\" data-for=\"message\">\n                            <label mbr-text class=\"form-control-label mbr-fonts-style\" mbr-theme-style=\"display-7\" for=\"message\">粉絲專頁 &nbsp;/ &nbsp;攤位介紹 &nbsp;/ 金額 / 日期 / 宣傳圖片授權</label>\n                            <textarea type=\"text\" class=\"form-control\" name=\"message\" rows=\"7\" data-form-field=\"Message\"></textarea>\n                        </div>\n            \n                        <span mbr-buttons mbr-theme-style=\"display-4\" data-toolbar=\"-mbrLink,-mbrBtnAdd,-mbrBtnMove\" class=\"input-group-btn\"><a href type=\"submit\" class=\"btn btn-form btn-black\">SEND FORM</a></span>\n                    </form>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "qIAulXf5SQ",
           "_protectedParams": [],
           "_global": false,
@@ -199,112 +246,101 @@
               "background-color": "@bg-value"
             },
             "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "h3": {
-              "text-align": "center"
+              "background": "url(@bg-value)"
             },
             ".mbr-section-subtitle": {
-              "color": "#767676",
+              "color": "#ffffff",
               "font-weight": "300"
             },
-            ".mbr-content-text": {
-              "color": "#767676"
-            },
-            ".panel-item": {
-              "background": "#ffffff"
-            },
-            ".card": {
-              "word-wrap": "break-word"
-            },
-            ".mbr-iconfont": {
-              "font-size": "80px",
-              "color": "#149dcc"
-            }
-          },
-          "_name": "counters1",
-          "_customHTML": "<section class=\"counters1 counters\" group=\"Counters\" plugins=\"ViewportChecker\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n\n        <input type=\"checkbox\" title=\"Show Block Title\" name=\"showTitles\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Icons\" name=\"showIcons\" checked>\n\n        <select title=\"Cards Count\" name=\"cardsAmount\">\n           <option value=\"1\">1</option>\n           <option value=\"2\">2</option>\n           <option value=\"3\">3</option>\n           <option value=\"4\" selected>4</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/img/02.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#b2ccd2\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.9\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <h2 class=\"mbr-section-title pb-3 align-center mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">O8D MARKET 3</h2>\n        <h3 class=\"mbr-section-subtitle mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n            遊逛指南\n        </h3>\n\n        <div class=\"container pt-4 mt-2\">\n            <div class=\"media-container-row\">\n                <div class=\"card p-3 align-center col-12 col-md-6\" mbr-class=\"{'col-lg-3': cardsAmount == '4','col-lg-4': cardsAmount == '3'}\">\n                    <div class=\"panel-item p-3\">\n                        <div class=\"card-img pb-3\" mbr-if=\"showIcons\">\n                            <a href=\"index.html#content5-w\"><span mbr-icon class=\"mbr-iconfont mbri-android\"></span></a>\n                        </div>\n\n                        <div class=\"card-text\">\n                            <h3 class=\"count pt-3 pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\">01</h3>\n                            <h4 class=\"mbr-content-title mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitles\">裝置<span style=\"font-weight: normal;\"><br></span></h4>\n                            <p class=\"mbr-content-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-content-text\">1.藝術家是誰<br>2.藝術家是誰<br>3.藝術家是誰<br>4.藝術家是誰<br>5.藝術家是誰</p>\n                        </div>\n                    </div>\n                </div>\n\n\n                <div class=\"card p-3 align-center col-12 col-md-6\" mbr-if=\"cardsAmount>1\" mbr-class=\"{'col-lg-3': cardsAmount == '4','col-lg-4': cardsAmount == '3'}\">\n                    <div class=\"panel-item p-3\">\n                        <div class=\"card-img pb-3\" mbr-if=\"showIcons\">\n                            <a href=\"index.html#content5-v\"><span mbr-icon class=\"mbr-iconfont mbri-music\"></span></a>\n                        </div>\n                        <div class=\"card-text\">\n                            <h3 class=\"count pt-3 pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\">02</h3>\n                            <h4 class=\"mbr-content-title mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitles\">表演<br></h4>\n                            <p class=\"mbr-content-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-content-text\">一人編制<br>詩與歌<br>詮釋葉石濤文<br>1. <br>2.<br>3.<br>4.</p>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"card p-3 align-center col-12 col-md-6\" mbr-if=\"cardsAmount>2\" mbr-class=\"{'col-lg-3': cardsAmount == '4','col-lg-4': cardsAmount == '3'}\">\n                    <div class=\"panel-item p-3\">\n                        <div class=\"card-img pb-3\" mbr-if=\"showIcons\">\n                            <a href=\"index.html#content5-u\"><span mbr-icon class=\"mbr-iconfont mbri-shopping-basket\"></span></a>\n                        </div>\n                        <div class=\"card-text\">\n                            <h3 class=\"count pt-3 pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\">03</h3>\n                            <h4 class=\"mbr-content-title mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitles\">攤位<br></h4>\n                            <p class=\"mbr-content-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-content-text\">攤位介紹<br>1. <br>2.<br>3.<br>4.<br>.<br>.<br>.<br>.<br><br></p>\n                        </div>\n                    </div>\n                </div>\n\n\n                <div class=\"card p-3 align-center col-12 col-md-6\" mbr-if=\"cardsAmount>3\" mbr-class=\"{'col-lg-3': cardsAmount == '4','col-lg-4': cardsAmount == '3'}\">\n                    <div class=\"panel-item p-3\">\n                        <div class=\"card-img pb-3\" mbr-if=\"showIcons\">\n                            <a href=\"index.html#content5-t\"><span mbr-icon class=\"mbr-iconfont mbri-bold\"></span></a>\n                        </div>\n\n                        <div class=\"card-texts\">\n                             <h3 class=\"count pt-3 pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\">04</h3>\n                            <h4 class=\"mbr-content-title mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitles\">床位<br></h4>\n                            <p class=\"mbr-content-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-content-text\">\n                                    鍋居與牛舍<br>介紹床型與房間\n                            </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n   </div>\n</section>",
-          "_cid": "qIAtrj3c55",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "counters1-r"
-        },
-        {
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
-              "background": "linear-gradient(45deg, @bg-value, @color2)"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            ".list-group-item": {
-              "padding": ".75rem 3.25rem"
-            },
-            ".plan": {
-              "word-break": "break-word",
+            ".number-wrap": {
+              "color": "@labelsColor",
+              "border-color": "rgba(255, 255, 255, 0.15)",
               "position": "relative",
-              "max-width": "300px",
-              "padding-right": "0",
-              "padding-left": "0",
-              "color": "#767676",
-              ".list-group-item": {
-                "position": "relative",
-                "-webkit-justify-content": "center",
-                "justify-content": "center",
-                "border": "0",
-                "&::after": {
-                  "position": "absolute",
-                  "bottom": "0",
-                  "left": "20%",
-                  "width": "60%",
-                  "height": "2px",
-                  "content": "\"\"",
-                  "background-color": "#eaeaea"
-                },
-                "&:last-child::after": {
-                  "display": "none"
-                }
+              "display": "inline-block",
+              "text-align": "center",
+              "padding": "5px 10px 13px 10px",
+              "margin": "0",
+              "min-width": "118px",
+              "border-radius": "2px",
+              "max-width": "100%"
+            },
+            ".number": {
+              "font-style": "normal",
+              "font-weight": "700",
+              "font-size": "55px",
+              "text-transform": "none",
+              "letter-spacing": "-2px",
+              "word-spacing": "0",
+              "line-height": "1.3",
+              "color": "@numbersColor"
+            },
+            ".period": {
+              "display": "block",
+              "padding-top": "2px",
+              "border-top": "1px solid rgba(0, 0, 0, 0.1)"
+            },
+            ".dot": {
+              "position": "absolute",
+              "top": "-10px",
+              "right": "-1em",
+              "width": "1em",
+              "display": "block",
+              "height": "83%",
+              "overflow": "hidden",
+              "font-style": "normal",
+              "font-weight": "700",
+              "font-size": "55px",
+              "line-height": "89.65px",
+              "text-transform": "none",
+              "letter-spacing": "0",
+              "word-spacing": "0",
+              "color": "@numbersColor"
+            },
+            ".countdown-cont": {
+              "max-width": "700px",
+              "margin": "0 auto"
+            },
+            "@media (max-width: 768px)": {
+              ".dot": {
+                "display": "none"
               }
             },
-            ".plan-header": {
-              "padding-left": "1rem",
-              "padding-right": "1rem"
-            },
-            ".plan-header, .plan-body": {
-              "background-color": "#fff"
-            },
-            ".price-figure": {
-              "font-weight": "700",
-              "color": "#232323",
-              "text-align": "left"
-            },
-            ".price-value": {
-              "font-weight": "700",
-              "vertical-align": "top",
-              "color": "#232323",
-              "text-align": "right"
+            "@media (max-width: 543px)": {
+              ".number-wrap": {
+                "margin-bottom": "15px"
+              }
             },
             "@media (max-width: 550px)": {
-              ".price-figure": {
-                "font-size": "4.25rem"
+              ".col-xs-3": {
+                "padding-left": "0",
+                "padding-right": "0"
+              },
+              ".number-wrap": {
+                "min-width": "auto"
               }
             },
-            ".plan-title": {
-              "color": "#232323"
+            "@media (max-width: 440px)": {
+              ".number, .dot": {
+                "font-size": "40px"
+              }
+            },
+            "@media (max-width: 380px)": {
+              ".period": {
+                "font-size": "0.8rem"
+              }
+            },
+            "H2": {
+              "color": "#ffffff"
             }
           },
-          "_name": "pricing-tables1",
-          "_customHTML": "<section group=\"Pricing Tables\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input inline type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input inline type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <select title=\"Items Count\" name=\"itemsCount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected>4</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background6.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#177396\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#ca2955\" condition=\"bg.type=='color'\" selected>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n\n            <div class=\"plan col-12 mx-2 my-2 justify-content-center\" mbr-if=\"itemsCount > 0\" mbr-class=\"{\n                 'col-lg-4': itemsCount == 3,\n                 'col-lg-6': itemsCount == 2,\n                 'col-lg-3': itemsCount == 4}\">\n                <div class=\"plan-header text-center pt-5\">\n                    <h3 class=\"plan-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".plan-title\"></h3>\n                    <div class=\"plan-price\">\n                        <span mbr-text class=\"price-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".price-value\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NT  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>\n                        <span mbr-text class=\"price-figure mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".price-figure\">150</span>\n                        <small mbr-text class=\"price-term mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".price-term\"></small>\n                    </div>\n                </div>\n                <div class=\"plan-body pb-5\">\n                    <div class=\"plan-list align-center\">\n                        <ul mbr-text class=\"list-group list-group-flush mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                            <li class=\"list-group-item\">50元折抵攤位消費</li><li class=\"list-group-item\">無料兌換kirin啤酒 x 1</li><li class=\"list-group-item\">可攜幼兒不限</li>\n                            <li class=\"list-group-item\">一人</li>\n                        </ul>\n                    </div>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pt-4 \" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"#top\" class=\"btn btn-primary\">預定票卷</a></div>\n                </div>\n            </div>\n\n            <div class=\"plan col-12 mx-2 my-2 justify-content-center\" mbr-if=\"itemsCount > 1\" mbr-class=\"{\n                 'col-lg-4': itemsCount == 3,\n                 'col-lg-6': itemsCount == 2,\n                 'col-lg-3': itemsCount == 4}\">\n                <div class=\"plan-header text-center pt-5\">\n                    <h3 class=\"plan-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".plan-title\"></h3>\n                    <div class=\"plan-price\">\n                        <span mbr-text class=\"price-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".price-value\">\n                            NT                        \n                        </span>\n                        <span mbr-text class=\"price-figure mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".price-figure\">\n                            <br>250</span>\n                        <small mbr-text class=\"price-term mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".price-term\"></small>\n                    </div>\n                </div>\n                <div class=\"plan-body pb-5\">\n                    <div class=\"plan-list align-center\">\n                        <ul mbr-text class=\"list-group list-group-flush mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                            <li class=\"list-group-item\">100元折抵攤位消費</li><li class=\"list-group-item\">無料兌換kirin啤酒 x 2</li><li class=\"list-group-item\">可攜幼兒不限</li>\n                            <li class=\"list-group-item\">&nbsp;兩人或兩日合購優惠</li>\n                        </ul>\n                    </div>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"#top\" class=\"btn btn-primary\">預定票卷</a></div>\n                </div>\n            </div>\n\n            <div class=\"plan col-12 mx-2 my-2 justify-content-center\" mbr-if=\"itemsCount > 2\" mbr-class=\"{\n                 'col-lg-4': itemsCount == 3,\n                 'col-lg-6': itemsCount == 2,\n                 'col-lg-3': itemsCount == 4}\">\n                <div class=\"plan-header text-center pt-5\">\n                    <h3 class=\"plan-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".plan-title\"></h3>\n                    <div class=\"plan-price\">\n                        <span mbr-text class=\"price-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".price-value\">NT&nbsp;</span>\n                        <span mbr-text class=\"price-figure mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".price-figure\">\n                            <br>950</span>\n                        <small mbr-text class=\"price-term mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".price-term\"></small>\n                    </div>\n                </div>\n                <div class=\"plan-body pb-5\">\n                    <div class=\"plan-list align-center\">\n                        <ul mbr-text class=\"list-group list-group-flush mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                            <li class=\"list-group-item\">一日門票卷</li><li class=\"list-group-item\">一晚睡入蝸居行李箱房</li>\n                            <li class=\"list-group-item\">\n                                50元折抵攤位消費</li><li class=\"list-group-item\">無料兌換kirin啤酒 x 1</li><li class=\"list-group-item\">數量限定</li>\n                        </ul>\n                    </div>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"#top\" class=\"btn btn-primary\">預定票卷</a></div>\n                </div>\n            </div>\n\n            <div class=\"plan col-12 mx-2 my-2 justify-content-center\" mbr-if=\"itemsCount > 3\" mbr-class=\"{\n                 'col-lg-4': itemsCount == 3,\n                 'col-lg-6': itemsCount == 2,\n                 'col-lg-3': itemsCount == 4}\">\n                <div class=\"plan-header text-center pt-5\">\n                    <h3 class=\"plan-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".plan-title\"></h3>\n                    <div class=\"plan-price\">\n                        <span mbr-text class=\"price-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".price-value\">\n                            NT<br>\n                        </span>\n                        <span mbr-text class=\"price-figure mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".price-figure\">1850</span>\n                        <small mbr-text class=\"price-term mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".price-term\"></small>\n                    </div>\n                </div>\n                <div class=\"plan-body pb-5\">\n                    <div class=\"plan-list align-center\">\n                        <ul mbr-text class=\"list-group list-group-flush mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                            <li class=\"list-group-item\">雙人一日門票卷</li><li class=\"list-group-item\">雙人一晚睡入牛舍套房</li><li class=\"list-group-item\">100元折抵攤位消費\n                            </li>\n                            <li class=\"list-group-item\">無料兌換kirin啤酒 x 2</li><li class=\"list-group-item\">數量限定</li>\n                        </ul>\n                    </div>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"#top\" class=\"btn btn-primary\">預定票卷</a></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "qIAl9PYDJ5",
+          "_name": "countdown1",
+          "_customHTML": "<section class=\"countdown1\" group=\"Countdowns\" plugins=\"countdown\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"text\" title=\"Countdown\" name=\"countdown\" value=\"2018/02/10\">\n        <input type=\"text\" inline title=\"Days\" name=\"daysCountdown\" value=\"Days\">\n        <input type=\"text\" inline title=\"Hours\" name=\"hoursCountdown\" value=\"Hours\">\n        <input type=\"text\" inline title=\"Minutes\" name=\"minutesCountdown\" value=\"Minutes\">\n        <input type=\"text\" inline title=\"Seconds\" name=\"secondsCountdown\" value=\"Seconds\">\n        <input type=\"color\" title=\"Numbers Color\" name=\"numbersColor\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Labels Color\" name=\"labelsColor\" value=\"#efefef\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#5d96aa\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container \">\n        <h2 class=\"mbr-section-title pb-3 align-center mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>攤位報名倒數</b></h2>\n        <h3 class=\"mbr-section-subtitle align-center mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n            一言難盡</h3>\n        \n    </div>\n    <div class=\"container countdown-cont align-center\">\n        <div title=\"{{daysCountdown}}\" class=\"daysCountdown\"></div>\n        <div title=\"{{hoursCountdown}}\" class=\"hoursCountdown\"></div> \n        <div title=\"{{minutesCountdown}}\" class=\"minutesCountdown\"></div> \n        <div title=\"{{secondsCountdown}}\" class=\"secondsCountdown\"></div>\n        <div class=\"countdown pt-5 mt-2\" data-due-date=\"{{countdown}}\"> \n        </div>\n    </div>\n</section>",
+          "_cid": "qIAHf2wPzr",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
           "_params": {},
-          "_anchor": "pricing-tables1-o"
+          "_anchor": "countdown1-11"
         },
         {
           "_styles": {
@@ -399,13 +435,192 @@
             }
           },
           "_name": "countdown1",
-          "_customHTML": "<section class=\"countdown1\" group=\"Countdowns\" plugins=\"countdown\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"text\" title=\"Countdown\" name=\"countdown\" value=\"2018/04/14\">\n        <input type=\"text\" inline title=\"Days\" name=\"daysCountdown\" value=\"Days\">\n        <input type=\"text\" inline title=\"Hours\" name=\"hoursCountdown\" value=\"Hours\">\n        <input type=\"text\" inline title=\"Minutes\" name=\"minutesCountdown\" value=\"Minutes\">\n        <input type=\"text\" inline title=\"Seconds\" name=\"secondsCountdown\" value=\"Seconds\">\n        <input type=\"color\" title=\"Numbers Color\" name=\"numbersColor\" value=\"#28262b\">\n        <input type=\"color\" title=\"Labels Color\" name=\"labelsColor\" value=\"#565656\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container \">\n        <h2 class=\"mbr-section-title pb-3 align-center mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"></h2>\n        <h3 class=\"mbr-section-subtitle align-center mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">從現在到活動日的計算</h3>\n        \n    </div>\n    <div class=\"container countdown-cont align-center\">\n        <div title=\"{{daysCountdown}}\" class=\"daysCountdown\"></div>\n        <div title=\"{{hoursCountdown}}\" class=\"hoursCountdown\"></div> \n        <div title=\"{{minutesCountdown}}\" class=\"minutesCountdown\"></div> \n        <div title=\"{{secondsCountdown}}\" class=\"secondsCountdown\"></div>\n        <div class=\"countdown pt-5 mt-2\" data-due-date=\"{{countdown}}\"> \n        </div>\n    </div>\n</section>",
-          "_cid": "qIAkLs4oLE",
+          "_customHTML": "<section class=\"countdown1\" group=\"Countdowns\" plugins=\"countdown\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"text\" title=\"Countdown\" name=\"countdown\" value=\"2018/04/14\">\n        <input type=\"text\" inline title=\"Days\" name=\"daysCountdown\" value=\"Days\">\n        <input type=\"text\" inline title=\"Hours\" name=\"hoursCountdown\" value=\"Hours\">\n        <input type=\"text\" inline title=\"Minutes\" name=\"minutesCountdown\" value=\"Minutes\">\n        <input type=\"text\" inline title=\"Seconds\" name=\"secondsCountdown\" value=\"Seconds\">\n        <input type=\"color\" title=\"Numbers Color\" name=\"numbersColor\" value=\"#28262b\">\n        <input type=\"color\" title=\"Labels Color\" name=\"labelsColor\" value=\"#565656\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container \">\n        <h2 class=\"mbr-section-title pb-3 align-center mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\">活動日倒數</h2>\n        <h3 class=\"mbr-section-subtitle align-center mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">------</h3>\n        \n    </div>\n    <div class=\"container countdown-cont align-center\">\n        <div title=\"{{daysCountdown}}\" class=\"daysCountdown\"></div>\n        <div title=\"{{hoursCountdown}}\" class=\"hoursCountdown\"></div> \n        <div title=\"{{minutesCountdown}}\" class=\"minutesCountdown\"></div> \n        <div title=\"{{secondsCountdown}}\" class=\"secondsCountdown\"></div>\n        <div class=\"countdown pt-5 mt-2\" data-due-date=\"{{countdown}}\"> \n        </div>\n    </div>\n</section>",
+          "_cid": "qIAHxYLhhg",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
           "_params": {},
-          "_anchor": "countdown1-m"
+          "_anchor": "countdown1-12"
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background": "linear-gradient(45deg, @bg-value, @color2)"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".list-group-item": {
+              "padding": ".75rem 3.25rem"
+            },
+            ".plan": {
+              "word-break": "break-word",
+              "position": "relative",
+              "max-width": "300px",
+              "padding-right": "0",
+              "padding-left": "0",
+              "color": "#767676",
+              ".list-group-item": {
+                "position": "relative",
+                "-webkit-justify-content": "center",
+                "justify-content": "center",
+                "border": "0",
+                "&::after": {
+                  "position": "absolute",
+                  "bottom": "0",
+                  "left": "20%",
+                  "width": "60%",
+                  "height": "2px",
+                  "content": "\"\"",
+                  "background-color": "#eaeaea"
+                },
+                "&:last-child::after": {
+                  "display": "none"
+                }
+              }
+            },
+            ".plan-header": {
+              "padding-left": "1rem",
+              "padding-right": "1rem"
+            },
+            ".plan-header, .plan-body": {
+              "background-color": "#fff"
+            },
+            ".price-figure": {
+              "font-weight": "700",
+              "color": "#232323",
+              "text-align": "left"
+            },
+            ".price-value": {
+              "font-weight": "700",
+              "vertical-align": "top",
+              "color": "#232323",
+              "text-align": "right"
+            },
+            "@media (max-width: 550px)": {
+              ".price-figure": {
+                "font-size": "4.25rem"
+              }
+            },
+            ".plan-title": {
+              "color": "#232323"
+            }
+          },
+          "_name": "pricing-tables1",
+          "_customHTML": "<section group=\"Pricing Tables\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input inline type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input inline type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <select title=\"Items Count\" name=\"itemsCount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected>4</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background6.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#149dcc\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#ff3366\" condition=\"bg.type=='color'\" selected>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n\n            <div class=\"plan col-12 mx-2 my-2 justify-content-center\" mbr-if=\"itemsCount > 0\" mbr-class=\"{\n                 'col-lg-4': itemsCount == 3,\n                 'col-lg-6': itemsCount == 2,\n                 'col-lg-3': itemsCount == 4}\">\n                <div class=\"plan-header text-center pt-5\">\n                    <h3 class=\"plan-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".plan-title\"></h3>\n                    <div class=\"plan-price\">\n                        <span mbr-text class=\"price-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".price-value\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NT  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>\n                        <span mbr-text class=\"price-figure mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".price-figure\">150</span>\n                        <small mbr-text class=\"price-term mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".price-term\"></small>\n                    </div>\n                </div>\n                <div class=\"plan-body pb-5\">\n                    <div class=\"plan-list align-center\">\n                        <ul mbr-text class=\"list-group list-group-flush mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                            <li class=\"list-group-item\">50元折抵攤位消費</li><li class=\"list-group-item\">無料兌換kirin啤酒 x 1</li><li class=\"list-group-item\">可攜幼兒不限</li>\n                            <li class=\"list-group-item\">一人</li>\n                        </ul>\n                    </div>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pt-4 \" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"#top\" class=\"btn btn-primary\">預定票卷</a></div>\n                </div>\n            </div>\n\n            <div class=\"plan col-12 mx-2 my-2 justify-content-center\" mbr-if=\"itemsCount > 1\" mbr-class=\"{\n                 'col-lg-4': itemsCount == 3,\n                 'col-lg-6': itemsCount == 2,\n                 'col-lg-3': itemsCount == 4}\">\n                <div class=\"plan-header text-center pt-5\">\n                    <h3 class=\"plan-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".plan-title\"></h3>\n                    <div class=\"plan-price\">\n                        <span mbr-text class=\"price-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".price-value\">\n                            NT                        \n                        </span>\n                        <span mbr-text class=\"price-figure mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".price-figure\">\n                            <br>250</span>\n                        <small mbr-text class=\"price-term mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".price-term\"></small>\n                    </div>\n                </div>\n                <div class=\"plan-body pb-5\">\n                    <div class=\"plan-list align-center\">\n                        <ul mbr-text class=\"list-group list-group-flush mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                            <li class=\"list-group-item\">100元折抵攤位消費</li><li class=\"list-group-item\">無料兌換kirin啤酒 x 2</li><li class=\"list-group-item\">可攜幼兒不限</li>\n                            <li class=\"list-group-item\">&nbsp;兩人或兩日合購優惠</li>\n                        </ul>\n                    </div>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"#top\" class=\"btn btn-primary\">預定票卷</a></div>\n                </div>\n            </div>\n\n            <div class=\"plan col-12 mx-2 my-2 justify-content-center\" mbr-if=\"itemsCount > 2\" mbr-class=\"{\n                 'col-lg-4': itemsCount == 3,\n                 'col-lg-6': itemsCount == 2,\n                 'col-lg-3': itemsCount == 4}\">\n                <div class=\"plan-header text-center pt-5\">\n                    <h3 class=\"plan-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".plan-title\"></h3>\n                    <div class=\"plan-price\">\n                        <span mbr-text class=\"price-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".price-value\">NT&nbsp;</span>\n                        <span mbr-text class=\"price-figure mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".price-figure\">\n                            <br>950</span>\n                        <small mbr-text class=\"price-term mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".price-term\"></small>\n                    </div>\n                </div>\n                <div class=\"plan-body pb-5\">\n                    <div class=\"plan-list align-center\">\n                        <ul mbr-text class=\"list-group list-group-flush mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                            <li class=\"list-group-item\">一日門票卷</li><li class=\"list-group-item\">一晚睡入蝸居行李箱房</li>\n                            <li class=\"list-group-item\">\n                                50元折抵攤位消費</li><li class=\"list-group-item\">無料兌換kirin啤酒 x 1</li><li class=\"list-group-item\">數量限定</li>\n                        </ul>\n                    </div>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"#top\" class=\"btn btn-primary\">預定票卷</a></div>\n                </div>\n            </div>\n\n            <div class=\"plan col-12 mx-2 my-2 justify-content-center\" mbr-if=\"itemsCount > 3\" mbr-class=\"{\n                 'col-lg-4': itemsCount == 3,\n                 'col-lg-6': itemsCount == 2,\n                 'col-lg-3': itemsCount == 4}\">\n                <div class=\"plan-header text-center pt-5\">\n                    <h3 class=\"plan-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".plan-title\"></h3>\n                    <div class=\"plan-price\">\n                        <span mbr-text class=\"price-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".price-value\">\n                            NT<br>\n                        </span>\n                        <span mbr-text class=\"price-figure mbr-fonts-style\" mbr-theme-style=\"display-1\" data-app-selector=\".price-figure\">1850</span>\n                        <small mbr-text class=\"price-term mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".price-term\"></small>\n                    </div>\n                </div>\n                <div class=\"plan-body pb-5\">\n                    <div class=\"plan-list align-center\">\n                        <ul mbr-text class=\"list-group list-group-flush mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                            <li class=\"list-group-item\">雙人一日門票卷</li><li class=\"list-group-item\">雙人一晚睡入牛舍套房</li><li class=\"list-group-item\">100元折抵攤位消費\n                            </li>\n                            <li class=\"list-group-item\">無料兌換kirin啤酒 x 2</li><li class=\"list-group-item\">數量限定</li>\n                        </ul>\n                    </div>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"#top\" class=\"btn btn-primary\">預定票卷</a></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "qIAl9PYDJ5",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "pricing-tables1-o"
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background": "url(@bg-value)"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#ffffff",
+              "font-weight": "300"
+            },
+            ".number-wrap": {
+              "color": "@labelsColor",
+              "border-color": "rgba(255, 255, 255, 0.15)",
+              "position": "relative",
+              "display": "inline-block",
+              "text-align": "center",
+              "padding": "5px 10px 13px 10px",
+              "margin": "0",
+              "min-width": "118px",
+              "border-radius": "2px",
+              "max-width": "100%"
+            },
+            ".number": {
+              "font-style": "normal",
+              "font-weight": "700",
+              "font-size": "55px",
+              "text-transform": "none",
+              "letter-spacing": "-2px",
+              "word-spacing": "0",
+              "line-height": "1.3",
+              "color": "@numbersColor"
+            },
+            ".period": {
+              "display": "block",
+              "padding-top": "2px",
+              "border-top": "1px solid rgba(0, 0, 0, 0.1)"
+            },
+            ".dot": {
+              "position": "absolute",
+              "top": "-10px",
+              "right": "-1em",
+              "width": "1em",
+              "display": "block",
+              "height": "83%",
+              "overflow": "hidden",
+              "font-style": "normal",
+              "font-weight": "700",
+              "font-size": "55px",
+              "line-height": "89.65px",
+              "text-transform": "none",
+              "letter-spacing": "0",
+              "word-spacing": "0",
+              "color": "@numbersColor"
+            },
+            ".countdown-cont": {
+              "max-width": "700px",
+              "margin": "0 auto"
+            },
+            "@media (max-width: 768px)": {
+              ".dot": {
+                "display": "none"
+              }
+            },
+            "@media (max-width: 543px)": {
+              ".number-wrap": {
+                "margin-bottom": "15px"
+              }
+            },
+            "@media (max-width: 550px)": {
+              ".col-xs-3": {
+                "padding-left": "0",
+                "padding-right": "0"
+              },
+              ".number-wrap": {
+                "min-width": "auto"
+              }
+            },
+            "@media (max-width: 440px)": {
+              ".number, .dot": {
+                "font-size": "40px"
+              }
+            },
+            "@media (max-width: 380px)": {
+              ".period": {
+                "font-size": "0.8rem"
+              }
+            },
+            "B": {
+              "color": "#ffffff"
+            }
+          },
+          "_name": "countdown1",
+          "_customHTML": "<section class=\"countdown1\" group=\"Countdowns\" plugins=\"countdown\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"text\" title=\"Countdown\" name=\"countdown\" value=\"2018/04/13\">\n        <input type=\"text\" inline title=\"Days\" name=\"daysCountdown\" value=\"Days\">\n        <input type=\"text\" inline title=\"Hours\" name=\"hoursCountdown\" value=\"Hours\">\n        <input type=\"text\" inline title=\"Minutes\" name=\"minutesCountdown\" value=\"Minutes\">\n        <input type=\"text\" inline title=\"Seconds\" name=\"secondsCountdown\" value=\"Seconds\">\n        <input type=\"color\" title=\"Numbers Color\" name=\"numbersColor\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Labels Color\" name=\"labelsColor\" value=\"#ffffff\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#bd4747\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container \">\n        <h2 class=\"mbr-section-title pb-3 align-center mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\"><b>購票倒數</b></h2>\n        <h3 class=\"mbr-section-subtitle align-center mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">------</h3>\n        \n    </div>\n    <div class=\"container countdown-cont align-center\">\n        <div title=\"{{daysCountdown}}\" class=\"daysCountdown\"></div>\n        <div title=\"{{hoursCountdown}}\" class=\"hoursCountdown\"></div> \n        <div title=\"{{minutesCountdown}}\" class=\"minutesCountdown\"></div> \n        <div title=\"{{secondsCountdown}}\" class=\"secondsCountdown\"></div>\n        <div class=\"countdown pt-5 mt-2\" data-due-date=\"{{countdown}}\"> \n        </div>\n    </div>\n</section>",
+          "_cid": "qIAIa0BgIF",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "countdown1-13"
         },
         {
           "_styles": {
